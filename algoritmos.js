@@ -21,7 +21,7 @@ function sumatoria( nums ){
 }
 let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let resultadoSuma = sumatoria( nums );
-console.log( resultadoSuma );
+//console.log( resultadoSuma );
 
 /*
     Escribe una función llamada numeroMayor. Esta función tiene como parámetro un arreglo de números.
@@ -44,8 +44,86 @@ function numeroMayor( nums ){
     return mayor;
 }
 
-let nums2 = [ 6, 2, 8, 3, 5, 1, 10, 4, 9, 7];
-let resultadoMayor = numeroMayor( nums2 );
-console.log( resultadoMayor );
+nums = [ 6, 2, 8, 3, 5, 1, 10, 4, 9, 7];
+let resultadoMayor = numeroMayor( nums );
+//console.log( resultadoMayor );
 
+
+/*
+    Escribe una función llamada promedio. Esta función tiene como parámetro un arreglo de números.
+    La función debe de calcular y retornar el promedio de los números en el arreglo.
+    Ejemplo:
+        let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let resultado = promedio( nums );
+        // El resultado debe ser 5.5.
+*/
+
+function promedio( nums ){
+    let suma = 0;
+
+    for( let i = 0; i < nums.length; i ++ ){
+        suma += nums[i];
+    }
+
+    let prom = suma / nums.length;
+    return prom;
+}
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let resultadoPromedio = promedio( nums );
+//console.log( resultadoPromedio );
+
+
+/*
+    Escribe una función llamada existeElemento. Esta función tiene como parámetro un arreglo de números 
+    y un número individual. La función debe de indicar si el número se encuentra dentro del arreglo.
+    De ser el caso retornar "El número 'x' se encuentra en la posición 'y' del arreglo", de lo contrario
+    retornar "El número no se encuentra en el arreglo"
+    Ejemplo:
+        let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let num = 8;
+        let resultado = existeElemento( nums, num );
+        // "El número 8 se encuentra en la posicón 7 del arreglo"
+*/
+
+function existeElemento( nums, num ){
+
+    for( let i = 0; i < nums.length; i ++ ){
+        if( num === nums[i] ){
+            return `El número ${num} se encuentra en el índice ${i} del arreglo`;
+            //return "El número " + num + " se encuentra en el índice " + i + " del arreglo";
+        }
+    }
+
+    return `El número ${num} no se encuentra en el arreglo`;
+}
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let num = 8;
+
+let resultadoExiste = existeElemento( nums, num );
+//console.log( resultadoExiste );
+
+/*
+    Escribe una función llamada esNumeroPrimo. Esta función tiene como parámetro un número entero.
+    La función debe de calcular y retornar 'true' si el número es primo, 'false' de lo contrario.
+    Algunos números primos: 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+*/
+function esNumeroPrimo( num ){
+    let contador = 0;
+
+    for( let i = 1; i <= num; i ++ ){
+        if( num % i === 0 ){
+            contador ++;
+        }
+    }
+
+    if( contador === 2 ){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+num = 10;
+let resultadoEsPrimo = esNumeroPrimo( num );
+console.log( resultadoEsPrimo );
 
