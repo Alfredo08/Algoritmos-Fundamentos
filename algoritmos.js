@@ -125,5 +125,46 @@ function esNumeroPrimo( num ){
 }
 num = 10;
 let resultadoEsPrimo = esNumeroPrimo( num );
-console.log( resultadoEsPrimo );
+//console.log( resultadoEsPrimo );
+
+/*
+    Escribe una función llamada encuentraElementos. Esta función tiene como parámetro un arreglo de números 
+    y un número individual. La función debe de encontrar cuántas veces se encuentra el número dentro del arreglo.
+    Así como los índices donde se encontró el número. La función retorna un objecto con la siguiente estructura:
+    Ejemplo:
+        let nums = [1, 2, 3, 8, 5, 8, 7, 8, 9, 10];
+        let num = 8;
+        let resultadoEncuentra = encuentraElementos( nums, num );
+        {
+            numero : 8,
+            contador : 3,
+            posiciones : [3, 5, 7]
+        }
+*/
+
+function encuentraElementos( nums, num ){
+    let contador = 0;
+    let posiciones = [];
+
+    for( let i = 0; i < nums.length; i ++ ){
+        if( nums[i] === num ){
+            contador ++;
+            posiciones.push( i );
+        }
+    }
+
+    let obj = {
+        contador,
+        posiciones,
+        numero : num
+    };
+
+    return obj;
+}
+
+nums = [1, 2, 3, 8, 5, 8, 7, 8, 9, 10];
+num = 8;
+let resultadoEncuentra = encuentraElementos( nums, num );
+//console.log( resultadoEncuentra );
+
 
