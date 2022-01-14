@@ -167,4 +167,56 @@ num = 8;
 let resultadoEncuentra = encuentraElementos( nums, num );
 //console.log( resultadoEncuentra );
 
+/*
+    Escribe una función llamada factorial. Esta función tiene como parámetro un número entero. 
+    La función debe de calcular el factorial del número proporcionado y retornar el resultado.
+    Un factorial se calcula de la siguiente manera: 5! = 1 * 2 * 3 * 4 * 5 = 120
+*/
 
+function factorial( num ){
+
+    if( num < 0 ){
+        return "No se puede calcular el factorial de un negativo.";
+    }
+
+    let resultado = 1;
+    for( let i = 1; i <= num; i ++ ){
+        resultado *= i;
+    }
+    return resultado;
+}
+
+num = 0;
+let resultadoFactorial = factorial( num );
+//console.log( resultadoFactorial );
+
+/*
+    Escribe una función llamada sumaNumerosPositivos. Esta función tiene como parámetro un arreglo de números. 
+    La función debe de sumar todos los números positivos dentro del arreglo y retornar su resultado.
+    (Utilizar funciones avanzadas de arreglos)
+    Ejemplo:
+        let nums = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10];
+        let resultadoSumaPositivos = sumaNumerosPositivos( nums );
+        // El resultado debe de ser 25
+*/
+
+function sumaNumerosPositivos( nums ){
+
+    let filtroPositivos = nums.filter( function( num ) {
+        if( num > 0 ){
+            return num;
+        }
+    });
+    
+    let suma = 0;
+
+    filtroPositivos.forEach( function( num ) {
+        suma += num;
+    });
+
+    return suma;
+}
+
+nums = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10];
+let resultadoSumaPositivos = sumaNumerosPositivos( nums );
+console.log( resultadoSumaPositivos );
